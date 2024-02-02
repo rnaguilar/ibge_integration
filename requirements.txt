@@ -1,0 +1,19 @@
+# Este é um arquivo requirements.txt que lista as dependências do projeto
+
+# Bibliotecas para manipulação de dados
+pandas
+
+# Biblioteca para consultas ao IBGE
+ibge
+
+# Biblioteca para fazer solicitações HTTP
+requests
+
+# Biblioteca para processamento de big data com Apache Spark
+pyspark
+
+# Biblioteca para acesso a dados do SIDRA (Sistema IBGE de Recuperação Automática)
+sidrapy
+
+# Biblioteca para manipulação eficiente de dados em formato de coluna
+pyarrow
