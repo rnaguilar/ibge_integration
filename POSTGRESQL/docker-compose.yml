@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: igbe_postgresql
+    ports:
+      - "8085:5432"
+    environment:
+      POSTGRES_USER: ibge
+      POSTGRES_PASSWORD: ibge
+      POSTGRES_DB: ibge
+      ADDITIONAL_DATABASES: "silver_data,gold_data"
+    volumes:
+      - ./backup:/var/lib/postgresql/data
+
