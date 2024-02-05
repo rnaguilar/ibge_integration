@@ -17,3 +17,8 @@ sidrapy
 
 # Biblioteca para manipulação eficiente de dados em formato de coluna
 pyarrow
+
+
+psycopg2
+
+sqlalchemy
