@@ -13,8 +13,8 @@ O projeto consiste em fazer a tratativa de dados desde a raw_data até a gold_da
 
 ### Modelo dos dados 
 ![Camada Silver](./MODELAGEM/ER_DIAGRAMA_CAMADA_SILVER.png)  
-![Camada Gold](./MODELAGEM/ER_DIAGRAMA_CAMADA_GOLD.png.png)  
-![PowerBI](./MODELAGEM/POWERBI.png.png)
+![Camada Gold](./MODELAGEM/ER_DIAGRAMA_CAMADA_GOLD.png)  
+![PowerBI](./MODELAGEM/POWERBI.png)
 
 
 # Pré Configuração
