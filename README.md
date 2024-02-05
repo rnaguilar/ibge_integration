@@ -1,44 +1,39 @@
-# ibge_integration
-Projeto IBGE 
-Engenharia (Spark)
-Estrutura de dados SQL e Parquet
-Data Viz - Power BI
+# INTEGRAÇÃO DE DADOS DO IBGE
+Projeto IBGE de Pipeline de Dados
++ Engenharia (Spark)
++ Estrutura de dados SQL e Parquet
++ Data Viz - Power BI
+
+# Estrutura do Projeto
+O projeto consiste em fazer a tratativa de dados desde a raw_data até a gold_data. E a camada de visualização com PowerBi
 
 
-Instruções de Implantação
+# Pré Configuração
++ Instação do Spark: https://medium.com/@MarinAgli1/setting-up-a-spark-standalone-cluster-on-docker-in-layman-terms-8cbdc9fdd14b
++ Instação do Notebook: https://jupyter.org/install
+
+# Configuração
 
 Este projeto requer alguns pré-requisitos e configurações específicas para ser implantado com sucesso. Siga as etapas abaixo para configurar o ambiente e executar o projeto.
 
-Configuração do Ambiente
-Banco de Dados:
+## Configuração do Ambiente
+### Banco de Dados:
+Certifique-se de ter um banco de dados de sua preferência instalado e em execução.  
+Usei como referência uma imagem postgresql https://hub.docker.com/_/postgres  
+Usando o seguinte compose: https://github.com/rnaguilar/ibge_integration/blob/main/POSTGRESQL/docker-compose.yml  
+**Faça ajustes adicionais no arquivo docker-compose.yml conforme necessário, como configurações de porta ou credenciais.**
 
-Certifique-se de ter um banco de dados de sua preferência instalado e em execução.
-Instalação de Dependências:
+### Instalação de Dependências:
+Será necessario instalar as dependencias desse arquivo: https://github.com/rnaguilar/ibge_integration/blob/main/requirements.txt
 
-Execute o seguinte comando para instalar as dependências listadas no arquivo requirements.txt:
-bash
-Copy code
-pip install -r requirements.txt
-Criação de Bancos de Dados:
+## Preparar as Camadas
++ Criar as camadas **bronze_data, silver_data** e **gold_data**
++ Executar o Script na camada Silver: https://github.com/rnaguilar/ibge_integration/blob/main/SILVER_DATA/sql_start.sql
++ Executar o Script na camada: https://github.com/rnaguilar/ibge_integration/blob/main/GOLD_DATA/sql_start.sql
 
-Crie três bases de dados denominadas bronze_data, silver_data e gold_data em seu banco de dados.
-Execução do Script SQL:
+# Rodando o Projeto
+Existe 4 arquivos ".ypynb" 
++ raw_data: instalação de pacotes de as cargas dos dados para a pasta "RAW_DATA" em formato parquet, com pyarrow
++ bronze_data: leitura desses parquet com spark fazendo seleção dos campos para o database bronze_data
++ silver_data: leitura e tratamentos dos dados da camada bronze, usando spark e pandas
 
-Após criar as bases de dados, execute o script sql_silver_start.py para configurar a estrutura inicial do banco de dados silver_data.
-Configuração do Docker (Opcional)
-Caso prefira utilizar um banco de dados PostgreSQL via Docker, siga estas instruções:
-
-Instalação do Docker:
-
-Se ainda não tiver o Docker instalado, faça o download em Docker.
-No Windows, certifique-se de ter o WSL (Windows Subsystem for Linux) instalado.
-Utilização da Imagem PostgreSQL:
-
-Este projeto utiliza a imagem oficial do PostgreSQL disponível em hub.docker.com/_/postgres.
-No diretório POSTGRESQL, você encontrará o arquivo docker-compose.yml. Execute o seguinte comando para iniciar o contêiner do PostgreSQL:
-bash
-Copy code
-docker-compose up
-Configuração Adicional (Se Necessário):
-
-Faça ajustes adicionais no arquivo docker-compose.yml conforme necessário, como configurações de porta ou credenciais.
