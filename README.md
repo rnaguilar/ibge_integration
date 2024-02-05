@@ -9,12 +9,12 @@ O projeto consiste em fazer a tratativa de dados desde a raw_data até a gold_da
 
 ## Ideia de Arquitetura
 ### Pipeline
-![Arquitetura]([MODELAGEM/ARQUITETURA DE DADOS (BASICA).png](https://github.com/rnaguilar/ibge_integration/blob/main/MODELAGEM/ARQUITETURA%20DE%20DADOS%20(BASICA).png?raw=true))
+![Arquitetura](./MODELAGEM/PIPELINE.png)
 
-### Modelo dos dados
-![Camada Silver]([MODELAGEM/ER DIAGRAMA (CAMADA SILVER).png](https://github.com/rnaguilar/ibge_integration/blob/main/MODELAGEM/ER%20DIAGRAMA%20(CAMADA%20SILVER).png?raw=true))  
-![Camada Gold]([MODELAGEM/ER DIAGRAMA (CAMADA SILVER).png](https://github.com/rnaguilar/ibge_integration/blob/main/MODELAGEM/ARQUITETURA%20DE%20DADOS%20(BASICA).png?raw=true))  
-![PowerBi]([MODELAGEM/ER DIAGRAMA (CAMADA SILVER).png](https://github.com/rnaguilar/ibge_integration/blob/main/MODELAGEM/ARQUITETURA%20DE%20DADOS%20(BASICA).png?raw=true))
+### Modelo dos dados 
+![Camada Silver](./MODELAGEM/ER_DIAGRAMA_CAMADA_SILVER.png)  
+![Camada Gold](./MODELAGEM/ER_DIAGRAMA_CAMADA_GOLD.png.png)  
+![PowerBI](./MODELAGEM/POWERBI.png.png)
 
 
 # Pré Configuração
