@@ -1,0 +1,39 @@
+# AVG (P) IDH = 
+VAR ResumoEstado =
+        ADDCOLUMNS(
+            SUMMARIZECOLUMNS(
+                MUNICIPIO[uf],
+                "População Total", SUM(FATO[populacional]),
+                "Máximo IDH", MAX(FATO[idh])
+            ),
+            "Ano", VALUES(FATO[ano])
+        )
+RETURN
+DIVIDE(
+    SUMX(
+        ResumoEstado,
+        [População Total] * [Máximo IDH]
+    ),
+    SUMX(
+        ResumoEstado,
+        [População Total]
+    )
+);
+
+
+# AVG IDH = AVERAGE(FATO[idh])
+/*SUMX(FATO,FATO[populacional] * FATO[idh]) / SUM(FATO[populacional])*/;
+
+# IDH (ESTADO) = CALCULATE([# AVG IDH], FILTER(ESTADO,ESTADO[uf] = [@ UF SELECIONADA]));
+
+# PIB = SUM(FATO[pib]);
+
+# POPULACAO = SUM(FATO[populacional]);
+
+# QTD DIS MUNI = DISTINCTCOUNT(FATO[municipio]);
+
+# QTD ESTADOS = DISTINCTCOUNT(ESTADO[uf]);
+
+# MAX_ANO = CALCULATE(MAX(FATO[ano]), ALL(FATO));
+
+@ UF SELECIONADA = IF(ISBLANK(SELECTEDVALUE(ESTADO[uf])),"SP",SELECTEDVALUE(ESTADO[uf]))

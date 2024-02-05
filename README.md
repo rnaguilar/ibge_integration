@@ -50,3 +50,28 @@ Existe 4 arquivos ".ypynb"
 + bronze_data: leitura desses parquet com spark fazendo seleção dos campos para o database bronze_data
 + silver_data: leitura e tratamentos dos dados da camada bronze, usando spark e pandas
 + gold_data: prepara a camada com a fato e as dimensões para ser lida no power bi
+
+# Power BI
+Foi feito a carga de dados e as medidas conforme o arquivo POWERBI/IBGE.pbix
+## Medidas e Cargas
++ Carga M: 
++ Campos Dax:
+
+## Final
+2 Telas com recursos
++ Dica de Ferramente
++ Sumarize, Calculate
++ Layout Filtros
++ Menu
++ Açoes de Botões
++ Segmentação Sincronizada dos filtros
++ Graficos (Area, Mapa, Indicador, Cartão, Linha e barras)
++ Controle de Seleção
++ Controle de Indicadores
+
+## Layout
+### Layout Sem filtros Home
+![PowerBI](./MODELAGEM/HOME.png)
+
+### Layout Com Filtros da Home
+![PowerBI](./MODELAGEM/FILTRO.png)

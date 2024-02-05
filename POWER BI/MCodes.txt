@@ -1,0 +1,35 @@
+Região 
+let
+    Fonte = PostgreSQL.Database("localhost:8085", "gold_data"),
+    public_regiao = Fonte{[Schema="public",Item="regiao"]}[Data],
+    #"Colunas Removidas" = Table.RemoveColumns(public_regiao,{"public.estado"}),
+    #"Tipo Alterado" = Table.TransformColumnTypes(#"Colunas Removidas",{{"id_regiao", type text}})
+in
+    #"Tipo Alterado"
+
+Fato
+let
+    Fonte = PostgreSQL.Database("localhost:8085", "gold_data"),
+    public_fato_pesquisa = Fonte{[Schema="public",Item="fato_pesquisa"]}[Data],
+    #"Tipo Alterado" = Table.TransformColumnTypes(public_fato_pesquisa,{{"ano", type text}, {"municipio", type text}})
+in
+    #"Tipo Alterado"
+
+Estado
+let
+    Fonte = PostgreSQL.Database("localhost:8085", "gold_data"),
+    public_estado = Fonte{[Schema="public",Item="estado"]}[Data],
+    #"Tipo Alterado" = Table.TransformColumnTypes(public_estado,{{"id_estado", type text}, {"uf", type text}, {"estado", type text}, {"id_regiao", type text}}),
+    #"Colunas Removidas" = Table.RemoveColumns(#"Tipo Alterado",{"public.municipio", "public.regiao", "latitude", "longitude"}),
+    #"Personalização Adicionada" = Table.AddColumn(#"Colunas Removidas", "UF_AJUSTADA", each "Brasil - " & [uf])
+in
+    #"Personalização Adicionada"
+
+Municipio
+let
+    Fonte = PostgreSQL.Database("localhost:8085", "gold_data"),
+    public_municipio = Fonte{[Schema="public",Item="municipio"]}[Data],
+    #"Colunas Removidas" = Table.RemoveColumns(public_municipio,{"public.estado"}),
+    #"Tipo Alterado" = Table.TransformColumnTypes(#"Colunas Removidas",{{"id_municipio", type text}})
+in
+    #"Tipo Alterado"
