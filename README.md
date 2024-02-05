@@ -11,9 +11,13 @@ O projeto consiste em fazer a tratativa de dados desde a raw_data até a gold_da
 ### Pipeline
 ![Arquitetura](./MODELAGEM/PIPELINE.png)
 
-### Modelo dos dados 
+### Modelo dos dados (Camada Silver)
 ![Camada Silver](./MODELAGEM/ER_DIAGRAMA_CAMADA_SILVER.png)  
+
+### Modelo dos dados (Camada Gold)
 ![Camada Gold](./MODELAGEM/ER_DIAGRAMA_CAMADA_GOLD.png)  
+
+### Modelo dos dados (PowerBI)
 ![PowerBI](./MODELAGEM/POWERBI.png)
 
 
