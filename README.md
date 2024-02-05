@@ -54,8 +54,8 @@ Existe 4 arquivos ".ypynb"
 # Power BI
 Foi feito a carga de dados e as medidas conforme o arquivo POWERBI/IBGE.pbix
 ## Medidas e Cargas
-+ Carga M: 
-+ Campos Dax:
++ Carga M: https://github.com/rnaguilar/ibge_integration/blob/main/POWER%20BI/MCodes.txt
++ Campos Dax:https://github.com/rnaguilar/ibge_integration/blob/main/POWER%20BI/MedidasDax.txt
 
 ## Final
 2 Telas com recursos
